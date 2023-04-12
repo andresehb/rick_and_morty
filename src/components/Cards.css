@@ -1,6 +1,9 @@
 
 .cards_container {
     display: flex;
-    padding: .9em;
-    border: 8px solid #F2F2F2;
+    justify-content: space-between;
+    height: 600px;
+    width: 1200px;
+    margin-top: 2em;
+    margin-left: 4.5em;
 }

@@ -4,7 +4,7 @@ import './Card.css'
 export default function Card({id, name, status, species, gender, origin, image, onClose}) {
    return (
       <div className="card">
-         <button onClick={() => onClose(id)}>X</button>
+         <button className='card-button' onClick={() => onClose(id)}>X</button>
          <Link to={`/detail/${id}`}>
             <h2>{name}</h2>
             <h2>{status}</h2>

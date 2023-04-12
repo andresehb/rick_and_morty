@@ -1,0 +1,49 @@
+body {
+    background-image: url(https://i.pinimg.com/originals/64/10/b0/6410b0af4517d1fadc098f7d19a1f7e2.jpg);
+    background-size: cover;
+}
+
+.login-wrapper {
+    margin: 5em;
+    background-color: #0C0B1F;
+    height: 30em;
+    border-radius: 5em;
+    position: relative;
+}
+
+.form-cont {
+    position: absolute;
+    top: 30%;
+    left: 43%;
+}
+
+.login-input {
+    background-color: #1C1A46;
+    margin-top: 1em;
+    border: none;
+    text-align: center;
+    border-radius: 5em;
+    height: 35px;
+    width: 200px;
+    color: #fff;
+    padding: 5px;
+}
+
+.login-button {
+    background-color: #29FF25;
+    border: none;
+    color: #1C1A46;
+    border-radius: 5em;
+    height: 35px;
+    width: 200px;
+    padding: 5px 10px;
+    margin-top: 1em;
+}
+
+.login-button {
+    background-color: #5AFF57;
+}
+
+.err {
+    color: #ff0000;
+}
