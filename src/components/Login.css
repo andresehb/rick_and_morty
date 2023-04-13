@@ -1,9 +1,4 @@
-body {
-    background-image: url(https://i.pinimg.com/originals/64/10/b0/6410b0af4517d1fadc098f7d19a1f7e2.jpg);
-    background-size: cover;
-}
-
-.login-wrapper {
+.wrapper {
     margin: 5em;
     background-color: #0C0B1F;
     height: 30em;
@@ -11,10 +6,15 @@ body {
     position: relative;
 }
 
-.form-cont {
+.form {
     position: absolute;
     top: 30%;
     left: 43%;
+}
+
+.title {
+    color: #ddd;
+    font-size: 2rem;
 }
 
 .login-input {
@@ -29,7 +29,7 @@ body {
     padding: 5px;
 }
 
-.login-button {
+.login-btn {
     background-color: #29FF25;
     border: none;
     color: #1C1A46;
@@ -38,9 +38,10 @@ body {
     width: 200px;
     padding: 5px 10px;
     margin-top: 1em;
+    transition: background-color 200ms;
 }
 
-.login-button {
+.login-btn:hover {
     background-color: #5AFF57;
 }
 

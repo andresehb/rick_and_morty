@@ -5,4 +5,6 @@
  body {
    margin: 0;
    padding: 0;
+   background-image: url(https://i.pinimg.com/originals/64/10/b0/6410b0af4517d1fadc098f7d19a1f7e2.jpg);
+   background-size: cover;
  }

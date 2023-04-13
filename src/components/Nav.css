@@ -4,7 +4,7 @@ nav {
     justify-content: space-between;
 }
 
-.link-button {
+.link-btn {
     border: none;
     height: 30px;
     width: 100px;
@@ -13,8 +13,25 @@ nav {
     background-color: #443EC4;
     border-radius: .2em;
     color: #fff;
+    transition: background-color 200ms;
 }
 
-.link-button:hover {
+.link-btn:hover {
     background-color: #615CD7;
+}
+
+.logout-btn {
+    border: none;
+    height: 30px;
+    width: 100px;
+    padding: 2px 5px;
+    margin: 4px 2px;
+    background-color: #FF350A;
+    border-radius: .2em;
+    color: #fff;
+    transition: background-color 200ms;
+}
+
+.logout-btn:hover {
+    background-color: #FF5733;
 }

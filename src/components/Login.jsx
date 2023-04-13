@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import "./Login.css"
+import "./Login.css";
 
 const regexEmail = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/i;
 const regexPassword = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/i;
@@ -17,7 +17,7 @@ export default function Login({ login }) {
         password: ''
     })
 
-    function validate(inputs) {
+    const validate = (inputs) => {
         const errors = {};
         if (!inputs.email) {
             errors.email = 'Enter an email address'
@@ -31,7 +31,7 @@ export default function Login({ login }) {
         return errors;
     }
 
-    function handleChange(event) {
+    const handleChange = (event) => {
         setInputs({
             ...inputs,
             [event.target.name]: event.target.value
@@ -44,7 +44,7 @@ export default function Login({ login }) {
         )
     }
 
-    function handleSubmit(event) {
+    const handleSubmit = (event) => {
         event.prevent.default()
         const aux = Object.keys(errors)
 
@@ -64,21 +64,22 @@ export default function Login({ login }) {
 
     return (
         <div className="login-wrapper">
-            <div className="form-cont">
-            <form onSubmit={handleSubmit}>
-                <input className="login-input" name="email" value={inputs.email} onChange={handleChange} placeholder="Email"></input>
-                <p className="err">{errors.email}</p>
-                <input className="login-input" name="password" value={inputs.password} onChange={handleChange} placeholder="Password"></input>
-                <p className="err">{errors.password}</p>
-                {
-                    Object.keys(errors).length === 0 ? (
-                        <Link to='/home'>
-                            <button className="login-button" type="submit">Log in</button>
-                        </Link>
-                    )
-                    : null
-                }
-            </form>
+            <div className="form">
+                <form onSubmit={handleSubmit}>
+                    <p className="title">Rick and Morty</p>
+                    <input className="login-input" name="email" value={inputs.email} onChange={handleChange} placeholder="Email"></input>
+                    <p className="err">{errors.email}</p>
+                    <input className="login-input" name="password" value={inputs.password} onChange={handleChange} placeholder="Password"></input>
+                    <p className="err">{errors.password}</p>
+                    {
+                        Object.keys(errors).length === 0 ? (
+                            <Link to='/home'>
+                                <button className="login-btn" type="submit">Log in</button>
+                            </Link>
+                        )
+                        : null
+                    }
+                </form>
             </div>
         </div>
     )

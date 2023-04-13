@@ -8,6 +8,7 @@ import Login from './components/Login';
 import Detail from './components/Detail';
 import About from './components/About';
 import { useLocation, useNavigate } from 'react-router-dom';
+import Favorites from './components/Favorites';
 
 function App() {
    
@@ -19,13 +20,13 @@ function App() {
    const [characters, setCharacters] = useState([]);
    const location = useLocation();
 
-   function login(inputs) {
+   const login = (inputs) => {
       if (inputs.password === PASSWORD && inputs.email === EMAIL) {
          setAccess(true);
          navigate('/home');
       }
    }
-   function logout() {
+   const logout = () => {
       setAccess(false);
       navigate('/');
    }
@@ -34,7 +35,7 @@ function App() {
       !access && navigate('/');
    }, [access]);
 
-   function onSearch(id) {
+   const onSearch = (id) => {
       axios(`https://rickandmortyapi.com/api/character/${id}`).then(({ data }) => {
          if (data.name) {
             let noRepeat = characters.find((character) => character.id === data.id);
@@ -49,7 +50,7 @@ function App() {
       });
    }
 
-   function onClose(id){
+   const onClose = (id) => {
       setCharacters((oldChars) => {
          return oldChars.filter((character) => character.id !== id)
       })
@@ -62,6 +63,7 @@ function App() {
             <Route path='/' element={<Login login={login}/>}></Route>
             <Route path='/home' element={<Cards onClose={onClose} characters={characters}/>}></Route>
             <Route path='/about' element={<About/>}></Route>
+            <Route path='/favorites' element={<Favorites onClose={onClose}/>}></Route>
             <Route path='/detail/:id' element={<Detail/>}></Route>
          </Routes>
       </div>

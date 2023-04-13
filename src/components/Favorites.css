@@ -1,4 +1,5 @@
-.search-btn {
+
+.reset-btn {
     border: none;
     height: 30px;
     width: 100px;
@@ -10,12 +11,6 @@
     transition: background-color 200ms;
 }
 
-.search-btn:hover {
+.reset-btn:hover {
     background-color: #615CD7;
-}
-
-.search-input {
-    width: 200px;
-    height: 28px;
-    border: 2px solid #000;
 }
