@@ -1,9 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const characters = require('./characters');
-const favorites = require('./favorites');
+const character = require('./character');
+const handleFavorites = require('./handleFavorites');
+const login = require('./login');
 
-router.use('/characters', characters);
-router.use('/favorites', favorites);
+router.use('/character', character);
+router.use('/favorites', handleFavorites);
+router.use('/login', login);
 
 module.exports = router;

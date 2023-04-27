@@ -1,30 +1,31 @@
 const axios = require('axios');
-require('dotenv');
-const URL = process.env.SERVER_URL
-const STATUS_OK = 200;
-const STATUS_ERROR = 500;
+require('dotenv').config();
+const URL = process.env.SERVER_URL;
+const EMAIL = process.env.EMAIL;
+const PASSWORD = process.env.PASSWORD;
 
 const getCharById = (req, res) => {
     const { id } = req.params;
-    try {
-        axios.get(`${URL}${id}`).then(({ data }) => {
-            if (data) {
-                const character = {
-                    id: data.id,
-                    status: data.status,
-                    name: data.name,
-                    species: data.species,
-                    origin: data.origin.name,
-                    image: data.image,
-                    gender: data.gender
-                }
-                return res.status(STATUS_OK).json(character)
+
+    axios(`${URL}/${id}`)
+    .then(response => response.data)
+    .then(({ id, status, name, species, origin, image, gender }) => {
+        if (name) {
+            const character = {
+                id,
+                name,
+                species,
+                origin,
+                image,
+                gender,
+                status
             }
-        })
-    } catch (error) {
-        return res.status(STATUS_ERROR).json({ message: error })
-    }
-};
+            return res.status(200).json(character)
+        }
+        return res.status(404).send('Not found')
+    })
+    .catch(error => res.status(500).send(error.message))
+}
 
 module.exports = {
     getCharById

@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const { getCharById } = require('../controllers/getCharById');
+const { login } = require('../controllers/login');
 
-router.get('/:id', getCharById)
+router.get('/', login);
 
 module.exports = router;

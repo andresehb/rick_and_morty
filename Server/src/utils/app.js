@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const allRoutes = require('../routes/index');
+const allRoutes = require('../routes/index.js');
 
 app.use(express.json());
 
@@ -14,7 +14,7 @@ app.use((req, res, next) => {
     next();
 });
 
-app.get('/rickandmorty', allRoutes);
+app.use('/rickandmorty', allRoutes);
 
 app.get('/', (req, res) => {
     res.status(200).json({
