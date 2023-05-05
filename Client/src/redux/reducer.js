@@ -11,13 +11,14 @@ export default function rootReducer(state = initialState, { type, payload }) {
             return {
                 ...state,
                 myFavorites: payload,
-                allCharacters: payload,
+                allCharacters: payload
             };
         case REMOVE_FAV:
+            const newFavorites = state.allCharacters.filter((character) => character.id !== payload.id)
             return {
                 ...state,
-                myFavorites: payload,
-                allCharacters: payload,
+                myFavorites: newFavorites,
+                allCharacters: newFavorites
             };
         case FILTER:
             const filterCharacters = state.allCharacters.filter((character) => character.gender === payload)

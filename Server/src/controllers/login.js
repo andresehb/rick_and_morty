@@ -1,6 +1,7 @@
 require('dotenv').config();
 const DB_EMAIL = process.env.EMAIL;
 const DB_PASSWORD = process.env.PASSWORD;
+const { User } = require('../DB_connection');
 
 const login = (req, res) => {
     const { email, password } = req.query;

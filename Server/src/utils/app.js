@@ -4,7 +4,7 @@ const allRoutes = require('../routes/index.js');
 
 app.use(express.json());
 
-const urlEncode = express.urlencoded({extended: false})
+const urlEncode = express.urlencoded({extended: false});
 
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*'); //Autorizo recibir solicitudes de este dominio
